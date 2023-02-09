@@ -1,1 +1,67 @@
-.
+Instruções de Utilização do BCCEV
+
+- O programa possuir os seguintes recursos:
+
+1 - Carregar Database:
+    Carrega uma a base de dados previamente gerada em uma sessão anterior.
+    Caso não possua uma base de dados deverá realizar o cadastramento de
+    veiculos e carregadores nas funções 3 e 8.
+    É possivel veriricar se a base de dados foi carregada executando
+    as funções 4 e 9.
+
+2 - Realizar calculo:
+    Realiza o calculo de tempo aproximado de recarga.
+    Para isto ser possivel é necessário executar a função 1 (Carregar Database).
+
+3 - Cadastrar veiculos:
+    Realiza o cadastro de veiculos, com os seguintes campos;
+    Modelo, Marca, Ano, Capacidade da bateria em kWh, e o tipo, que se
+    refere se o veiculo é elétrico ou hibrido.
+
+    Recomenda-se objetividade ao realizar o cadastro, a fim de manter o banco
+    dados organizado e sem informações inuteis.
+    Exemplo:
+        |Modelo: Bolt | Marca: Chevorlet | Ano: 2016 | Capacidade da bateria: 60kWh | Tipo: Elétrico|
+        |Modelo: Bolt | Marca: Chevorlet | Ano: 2022 | Capacidade da bateria: 66kWh | Tipo: Elétrico|
+    Note que um mesmo modelo pode possuir capacidades diferentes conforme o ano do veiculo.
+
+4 - Listar veiculos:
+    Gera um lista onde o usuário pode ver todos os veiculos cadastrados
+    e suas especificações.
+
+5 - Pesquisar veiculos:
+    Realiza uma busca pelo bando de dados.
+    A informação procurada será sempre o modelo do veiculo.
+
+6 - Editar veiculos:
+    Edita um veiculo selecionado.
+
+7 - Excluir veiculos:
+    Elimina um veiculo cadastrado da base de dados.
+
+8 - Cadastrar Carregador:
+    Realiza o cadastro de carregadores, com os seguintes campos;
+    Modelo, Marca, Potência, Tipo de ligação, que se refere se o carregador
+    é monofásico ou trifásio.
+
+9 - Listar carregador:
+    Gera um lista onde o usuário pode ver todos os carregadores cadastrados
+    e suas especificações.
+
+10 - Pesquisar carregador:
+     Realiza uma busca pelo bando de dados. A informação procurada será sempre o modelo do carregador.
+
+11 - Editar carregador:
+     Edita um carregador selecionado.
+
+12 - Excluir carregador:
+     Elimina um carregador cadastrado da base de dados.
+
+13 - Ajuda:
+     Abre este documento.
+
+00 - Sair:
+     Encerra o programa.
+
+
+...
