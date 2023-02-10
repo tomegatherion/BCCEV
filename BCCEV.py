@@ -97,12 +97,12 @@ def editar_veiculo():
     marca = input("Nova marca (deixe em branco para manter o mesmo): ")
     if marca:
         veiculo.marca = marca
-    ano = input("Novo ano (deixe em branco para manter o mesmo): ")
+    ano = int(input("Novo ano (deixe em branco para manter o mesmo): "))
     if ano:
         veiculo.ano = int(ano)
-    capacidade = input("Nova capacidade (deixe em branco para manter o mesmo): ")
+    capacidade = float(input("Nova capacidade (deixe em branco para manter o mesmo): "))
     if capacidade:
-        veiculo.capacidade = int(capacidade)
+        veiculo.capacidade = float(capacidade)
     tipo = input("Novo tipo (deixe em branco para manter o mesmo): ")
     if tipo:
         veiculo.tipo = tipo
@@ -168,7 +168,7 @@ carregadores = []
 def cadastrar_carregador():
     modelo = input("Modelo: ")
     marca = input("Marca: ")
-    potência = int(input("Potência kW: "))
+    potência = float(input("Potência kW: "))
     ligação = input("Esquema de ligação: ")
     carregador = Carregador(modelo, marca, potência, ligação)
 
@@ -223,9 +223,9 @@ def editar_carregador():
     marca = input("Nova marca (deixe em branco para manter o mesmo): ")
     if marca:
         carregador.marca =marca
-    potência = input("Novo ano (deixe em branco para manter o mesmo): ")
+    potência = float(input("Novo ano (deixe em branco para manter o mesmo): "))
     if potência:
-        carregador.potência = int(potência)
+        carregador.potência = float(potência)
     ligação = input("Nova capacidade (deixe em branco para manter o mesmo): ")
     if ligação:
         carregador.ligação = (ligação)
