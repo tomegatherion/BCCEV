@@ -4,7 +4,7 @@ import os
 
 #____________________________________________________________________________________________________________________________#
 
-# Esta função será utilizada dentro de loops, para imperir que o loop traga a nova tela, deixando a visualização mais clara.
+# Esta função será utilizada dentro de loops, para impedir que o loop traga a nova tela, deixando a visualização mais clara.
 def esperar_tecla():
     input("\n\n\n\nPressione qualquer tecla para continuar...")
 
@@ -15,7 +15,7 @@ def esperar_tecla():
 
 #____________________________________________________________________________________________________________________________#
 #_________________________________________________________Veicular___________________________________________________________#
-#__________________________________Parte do códogo referente a parte veicular do programa____________________________________#
+#__________________________________Parte do código referente a parte veicular do programa____________________________________#
 #____________________________________________________________________________________________________________________________#
 
 
@@ -32,10 +32,10 @@ class Veiculo:
         self.capacidade = capacidade
         self.tipo = tipo
 
-veiculos = []
+veículos = []
 
 
-# Função para cadrastrar veiculos.
+# Função para cadastrar veículos.
 def cadastrar_veiculo():
     modelo = input("Modelo: ")
     marca = input("Marca: ")
@@ -47,34 +47,34 @@ def cadastrar_veiculo():
 
     # Verifica se o veículo já existe na lista
     existe = False
-    for v in veiculos:
+    for v in veículos:
         if v.modelo == modelo and v.marca == marca and v.capacidade == capacidade:
             existe = True
             break
     if existe:
         print("Veículo já cadastrado.")
     else:
-        veiculos.append(veiculo)
+        veículos.append(veiculo)
         print("Veículo cadastrado com sucesso!")
 
 
-# Função para listar os veiculos já cadastrados.
-def listar_veiculos():
-    if not veiculos:
-        print("Não há veiculos cadastrados!")
+# Função para listar os veículos já cadastrados.
+def listar_veículos():
+    if not veículos:
+        print("Não há veículos cadastrados!")
         return
-    for i, veiculo in enumerate(veiculos):
+    for i, veiculo in enumerate(veículos):
         print(f"{i+1}. Modelo: {veiculo.modelo} | Marca: {veiculo.marca} | Ano: {veiculo.ano} | Capacidade kWh: {veiculo.capacidade} | Tipo: {veiculo.tipo}")
 
 
 # Função para pesquisar pelo veiculo.
 def pesquisar_veiculo():
-    if not veiculos:
-        print("Não há veiculos cadastrados!")
+    if not veículos:
+        print("Não há veículos cadastrados!")
         return
     else:
         modelo = input("Modelo do veículo: ")
-        for i, veiculo in enumerate(veiculos):
+        for i, veiculo in enumerate(veículos):
             if veiculo.modelo.lower() == modelo.lower():
                 print(f"Veículo encontrado: {i+1}. Modelo: {veiculo.modelo} | Marca: {veiculo.marca} | Ano: {veiculo.ano} | Capacidade kWh: {veiculo.capacidade} | Tipo: {veiculo.tipo}")
                 return i
@@ -83,10 +83,10 @@ def pesquisar_veiculo():
 
 
 # Função para editar o veiculo.
-# Dentro da função editar tambem é utiliado a função escolher veiculo.
+# Dentro da função editar também é utilizado a função escolher veiculo.
 def editar_veiculo():
-    if not veiculos:
-        print("Não há veiculos cadastrados!")
+    if not veículos:
+        print("Não há veículos cadastrados!")
         return
     veiculo = escolher_veiculo()
     if veiculo is None:
@@ -109,32 +109,32 @@ def editar_veiculo():
     print("Veículo editado com sucesso!")
 
 
-# Salva as alterações no banco de dados veiculos.bin
-def salvar_veiculos():
-    with open("veiculos.bin", "wb") as arquivo:
-        pickle.dump(veiculos, arquivo)
+# Salva as alterações no banco de dados veículos.bin
+def salvar_veículos():
+    with open("veículos.bin", "wb") as arquivo:
+        pickle.dump(veículos, arquivo)
 
 
-# Carrega as informações do bando de dados veiculos.bin para o programa.
-def carregar_veiculos():
-    global veiculos
+# Carrega as informações do bando de dados veículos.bin para o programa.
+def carregar_veículos():
+    global veículos
     try:
-        with open("veiculos.bin", "rb") as arquivo:
-            veiculos = pickle.load(arquivo)
+        with open("veículos.bin", "rb") as arquivo:
+            veículos = pickle.load(arquivo)
     except FileNotFoundError:
-        veiculos = []
+        veículos = []
 
 
 # Função excluir veiculo
-# Dentro da função excluir tambem é ultilizado a função escolher veiculo.
+# Dentro da função excluir também é utilizado a função escolher veiculo.
 def excluir_veiculo():
-    if not veiculos:
-        print("Não há veiculos cadastrados!")
+    if not veículos:
+        print("Não há veículos cadastrados!")
         return
     veiculo = escolher_veiculo()
     if veiculo is None:
         return
-    veiculos.remove(veiculo)
+    veículos.remove(veiculo)
     print("Veículo excluído com sucesso!")
 
 
@@ -144,7 +144,7 @@ def excluir_veiculo():
 
 #____________________________________________________________________________________________________________________________#
 #_________________________________________________________Carregador_________________________________________________________#
-#_____________________________Parte do códogo referente a parte sobre o equipamento no programa______________________________#
+#_____________________________Parte do código referente a parte sobre o equipamento no programa______________________________#
 #____________________________________________________________________________________________________________________________#
 
 
@@ -164,7 +164,7 @@ class Carregador:
 carregadores = []
 
 
-# Função para cadrastrar carregador.
+# Função para cadastrar carregador.
 def cadastrar_carregador():
     modelo = input("Modelo: ")
     marca = input("Marca: ")
@@ -209,7 +209,7 @@ def pesquisar_carregador():
 
 
 # Função para editar o carregador.
-# Dentro da função editar tambem é utiliado a função escolher carregador.
+# Dentro da função editar também é utilizado a função escolher carregador.
 def editar_carregador():
     if not carregadores:
         print("Não há carregadores cadastrados!")
@@ -249,7 +249,7 @@ def carregar_carregadores():
 
 
 # Função excluir carregador
-# Dentro da função excluir tambem é ultilizado a função escolher carregador.
+# Dentro da função excluir também é utilizado a função escolher carregador.
 def excluir_carregador():
     if not carregadores:
         print("Não há carregadores cadastrados!")
@@ -273,25 +273,25 @@ def excluir_carregador():
 
 
 
-# Função para escolher um veiculos a partir de uma lista na tela, pois o identificador
+# Função para escolher um veículos a partir de uma lista na tela, pois o identificador
 # principal das classes é o "modelo" do equipamento/carro, e 
 # por vezes um mesmo modelo em anos diferentes tem especificações técnicas diferentes.
 # Isto gera uma serie de problemas na hora de alterar ou excluir itens. Poderia ter sido resolvido de outra maneira
-# porem eu percebi que selecionar um intem para exclusão ou alteração a parte de uma tabela pode ser mais produtivo.
+# porem eu percebi que selecionar um item para exclusão ou alteração a parte de uma tabela pode ser mais produtivo.
 def escolher_veiculo():
-    listar_veiculos()
+    listar_veículos()
     try:
         escolha = int(input("Escolha um veículo pelo número: "))
-        if escolha < 1 or escolha > len(veiculos):
+        if escolha < 1 or escolha > len(veículos):
             raise ValueError("Veículo inválido.")
     except ValueError as e:
         print(e)
         return None
-    return veiculos[escolha-1]
+    return veículos[escolha-1]
 
 
-# Fnção para escolher carregador a partir de uma lista na tela.
-# Os comentários das linhas 277 a 280 tambem se aplicam a está função.
+# Função para escolher carregador a partir de uma lista na tela.
+# Os comentários das linhas 277 a 280 também se aplicam a está função.
 def escolher_carregador():
     listar_carregadores()
     try:
@@ -304,17 +304,17 @@ def escolher_carregador():
     return carregadores[escolha-1]
 
 
-# Em todo sistema a energia de saida é sempre menor que a energia de entrada, pois há sempre alguma perda no processo de transformação,
-# em téoria o tempo de carregamento seria: (Tempo de carregamento = Capacidade da bateria / Potência entrege pelo carregador)
-# Porem neste processo há diversas perdas, por efeito joule, por potencia reativa, por perdas na tranformação da corrente de CA >> CC,
-# dentre outros. Além disso há tambem o controle que o propio carregador realiza na velocidade de carga, a corrente de carga não é constante na
+# Em todo sistema a energia de saída é sempre menor que a energia de entrada, pois há sempre alguma perda no processo de transformação,
+# em teoria o tempo de carregamento seria: (Tempo de carregamento = Capacidade da bateria / Potência entregue pelo carregador)
+# Porem neste processo há diversas perdas, por efeito joule, por potencia reativa, por perdas na transformação da corrente de CA >> CC,
+# dentre outros. Além disso há também o controle que o próprio carregador realiza na velocidade de carga, a corrente de carga não é constante na
 # maioria dos casos, pois acarretaria a bateria há um grande stresse e desgaste prematuro, logo se corrente não é constante a velocidade da carga não é constante,
-# pois em grande maioria das vezes os carregadores veiculares mantem a tensão fixa, ou com variações moderadas, ocasionando assim uma variação na corrente absorvida 
+# pois em grande maioria das vezes os carregadores veiculares mantém a tensão fixa, ou com variações moderadas, ocasionando assim uma variação na corrente absorvida 
 # pela bateria devido a DDP entre carregador e bateria.
-# Logo, a o rendimento é na verdade um fator genérico que inclui a eficiencia e o rendimento do carregador. Pelas minhas a analises em diversos datasets de carregadores
-# chegei a este valor aproximado, porem dependendo da marca este valor varia de 0.70 até 0.85.
+# Logo, a o rendimento é na verdade um fator genérico que inclui a eficiência e o rendimento do carregador. Pelas minhas a analises em diversos datasets de carregadores
+# cheguei a este valor aproximado, porem dependendo da marca este valor varia de 0.70 até 0.85.
 # Mas de toda forma este será um ponto de melhoria futura no código, porem ainda está sendo levantada informações mais detalhadas junto aos fabricantes, pois
-# em alguns destes casos foi chegado a este resultado por formulas e exemplos praticos fornecidos pelos fabricantes.#
+# em alguns destes casos foi chegado a este resultado por formulas e exemplos práticos fornecidos pelos fabricantes.#
 rendimento = (0.70)
 
 
@@ -371,60 +371,60 @@ while True:
     #############################################################
     """)
 
-    opcao = int(input("Opção: "))
-    if opcao == 1:
+    opção = int(input("Opção: "))
+    if opção == 1:
         carregar_carregadores()
-        carregar_veiculos()
+        carregar_veículos()
         print("Base de dados Carregada!")
         esperar_tecla()
-    elif opcao == 2:
+    elif opção == 2:
         capacidade_dividido_por_potência()
         esperar_tecla()
-    elif opcao == 3:
+    elif opção == 3:
         cadastrar_veiculo()
-        salvar_veiculos()
+        salvar_veículos()
         esperar_tecla()
-    elif opcao == 4:
-        listar_veiculos()
+    elif opção == 4:
+        listar_veículos()
         esperar_tecla()
-    elif opcao == 5:
+    elif opção == 5:
         pesquisar_veiculo()
         esperar_tecla()
-    elif opcao == 6:
+    elif opção == 6:
         editar_veiculo()
         esperar_tecla()
-    elif opcao == 7:
+    elif opção == 7:
         excluir_veiculo()
-        salvar_veiculos()
+        salvar_veículos()
         esperar_tecla()
-    elif opcao == 8:
+    elif opção == 8:
         cadastrar_carregador()
         salvar_carregadores()
         esperar_tecla()
-    elif opcao == 9:
+    elif opção == 9:
         listar_carregadores()
         esperar_tecla()
-    elif opcao == 10:
+    elif opção == 10:
         pesquisar_carregador()
         esperar_tecla()
-    elif opcao == 11:
+    elif opção == 11:
         editar_carregador()
         salvar_carregadores()
         esperar_tecla()
-    elif opcao == 12:
+    elif opção == 12:
         excluir_carregador()
         salvar_carregadores()
         esperar_tecla()
-    elif opcao == 13:
+    elif opção == 13:
         with open("help.txt", "r", encoding='utf-8') as arquivo:
-            conteudo = arquivo.read()
-            print(conteudo)
+            conteúdo = arquivo.read()
+            print(conteúdo)
             while True:
                 tecla = input("Pressione 'q' Para Sair...")
                 if tecla == 'q':
                     break
 
-    elif opcao == 0:
+    elif opção == 0:
         break
     else:
         print("Digite uma Opção Valida!!!")
